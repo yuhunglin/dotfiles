@@ -1,6 +1,7 @@
 export PATH="$HOME/.bin:/usr/local/bin:$HOME/workspace/dotfiles/bin:$PATH"
 
 eval "$(hub alias -s)"
+source $(brew --prefix nvm)/nvm.sh
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
