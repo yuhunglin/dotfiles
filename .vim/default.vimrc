@@ -19,8 +19,7 @@ syntax on
 autocmd BufWritePost *.py call Flake8()
 
 " coffeescript whitespace
-autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab
-autocmd BufWritePost *.coffee CoffeeLint | vertical cwindow
+autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
 " Whitespace
 set nowrap
@@ -165,7 +164,8 @@ map <leader>M :set syntax=markdown<CR>:set wrap<CR>:set spell<CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim

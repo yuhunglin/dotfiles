@@ -12,6 +12,11 @@ if [ -f "$HOME/workspace/dotfiles/link.sh" ]; then
   . "$HOME/workspace/dotfiles/link.sh"
 fi
 
+# Installs npm packages globally
+if [ -f "$HOME/workspace/dotfiles/package.json" ]; then
+  npm install -g "$HOME/workspace/dotfiles/"
+fi
+
 # Auto install vundle plugins
 vim +PluginInstall +qall
 

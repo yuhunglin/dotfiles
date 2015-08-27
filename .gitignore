@@ -1,0 +1,2 @@
+#packages should be installed globally from dotfiles
+node_modules/
