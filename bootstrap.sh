@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This depends on the laptop script functions
+
 # Install additional brew packages
 if [ -f "$HOME/workspace/dotfiles/brew.sh" ]; then
   . "$HOME/workspace/dotfiles/brew.sh"
@@ -9,6 +11,9 @@ fi
 if [ -f "$HOME/workspace/dotfiles/link.sh" ]; then
   . "$HOME/workspace/dotfiles/link.sh"
 fi
+
+# Auto install vundle plugins
+vim +PluginInstall +qall
 
 source ~/.bash_profile
 
