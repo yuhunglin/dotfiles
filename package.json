@@ -6,7 +6,9 @@
     "coffee-script": "~1.9.3",
     "coffeelint": "~1.11.1",
     "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
     "gulp": "~3.9.0",
+    "gulp-cli": "~0.3.0",
     "jshint": "~2.8.0",
     "yo": "~1.4.7"
   }
