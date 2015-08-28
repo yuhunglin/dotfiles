@@ -17,6 +17,10 @@ if [ -f "$HOME/workspace/dotfiles/package.json" ]; then
   npm install -g "$HOME/workspace/dotfiles/"
 fi
 
+# Install Ruby
+rbenv install 2.2.2
+rbenv global 2.2.2
+
 # Auto install vundle plugins
 vim +PluginInstall +qall
 
@@ -28,8 +32,10 @@ if bash-it > /dev/null; then
     cd $HOME/workspace/dotfiles/.bash_it && git pull
     bash-it enable completion ssh
     bash-it enable completion git
+    bash-it enable completion git_flow
     bash-it enable completion gh
     bash-it enable plugin base
+    bash-it enable plugin rbenv
     for file in $HOME/workspace/dotfiles/bash_it_custom/*; do
         . "$file"
     done;
