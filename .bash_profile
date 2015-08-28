@@ -9,7 +9,7 @@ export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
+export BASH_IT_THEME='envy'
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
