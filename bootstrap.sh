@@ -20,6 +20,12 @@ fi
 # Install Ruby
 rbenv install 2.2.2
 rbenv global 2.2.2
+gem install bundler
+gem install sass
+
+# Install python goodies
+pip install --upgrade pip
+pip instal flake8
 
 # Auto install vundle plugins
 vim +PluginInstall +qall
