@@ -31,3 +31,6 @@ export MANPAGER='less -X';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
+
+# Android SDK
+export ANDROID_HOME=/usr/local/opt/android-sdk

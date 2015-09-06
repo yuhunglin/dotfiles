@@ -27,6 +27,9 @@ gem install sass
 pip install --upgrade pip
 pip instal flake8
 
+# Install android sdk
+android update sdk --no-ui --filter 'platform-tools'
+
 # Auto install vundle plugins
 vim +PluginInstall +qall
 
