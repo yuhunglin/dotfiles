@@ -21,6 +21,9 @@ autocmd BufWritePost *.py call Flake8()
 " coffeescript whitespace
 autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
+" Clipboard
+set clipboard=unnamed
+
 " Whitespace
 set nowrap
 set tabstop=4
