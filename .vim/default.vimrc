@@ -21,6 +21,9 @@ autocmd BufWritePost *.py call Flake8()
 " coffeescript whitespace
 autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
+" ruby whitespace
+autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+
 " Clipboard
 set clipboard=unnamed
 
@@ -184,20 +187,12 @@ nnoremap <leader>pt :set invpaste paste?<cr>
 set pastetoggle=<leader>pt
 set showmode
 
-" Run RSpec tests with Vroom
-nnoremap <unique> <leader>t :VroomRunTestFile<CR>
-map <unique> <leader>s :VroomRunNearestTest<CR>
+map <silent> <Leader>s :TestNearest<CR>
+map <silent> <Leader>t :TestFile<CR>
+map <silent> <Leader>a :TestSuite<CR>
+map <silent> <Leader>l :TestLast<CR>
+map <silent> <Leader>g :TestVisit<CR>
 
-let g:vroom_map_keys = 0
-let g:vroom_clear_screen = 0
-let g:vroom_detect_spec_helper = 1
-
-" Find the related spec for any file you open. Requires
-"  * Your specs live in spec/ or fast_spec/
-"  * Your pwd (current dir) is the project root
-"  * You use the same dir structure in your code and specs so that
-"    code living at lib/foo/bar.rb has a spec at spec/lib/foo/bar.rb
-"
 " This method handles files in fast_spec unlike the :A and :AV functions
 " that ship with rails.vim
 function! FindSpec()

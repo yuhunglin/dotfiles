@@ -38,6 +38,8 @@ Plugin 'tpope/vim-fugitive'
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
 
+Plugin 'janko-m/vim-test'
+
 
 source ~/.vim/bundles-javascript.vimrc
 source ~/.vim/bundles-ruby.vimrc
