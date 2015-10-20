@@ -31,6 +31,11 @@ Plugin 'embear/vim-localvimrc'
 Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'ZoomWin'
+Plugin 'godlygeek/tabular'
+Plugin 'carlobaldassi/ConqueTerm'
+
+" Testing
+Plugin 'janko-m/vim-test'
 
 " Git
 Plugin 'tpope/vim-fugitive'
@@ -38,7 +43,6 @@ Plugin 'tpope/vim-fugitive'
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
 
-Plugin 'janko-m/vim-test'
 
 
 source ~/.vim/bundles-javascript.vimrc
