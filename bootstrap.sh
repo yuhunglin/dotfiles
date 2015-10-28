@@ -45,6 +45,7 @@ if bash-it > /dev/null; then
     bash-it enable completion gh
     bash-it enable plugin base
     bash-it enable plugin rbenv
+    bash-it enable plugin pyenv
     for file in $HOME/workspace/dotfiles/bash_it_custom/*; do
         . "$file"
     done;

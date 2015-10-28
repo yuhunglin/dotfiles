@@ -3,6 +3,7 @@ export PATH="$HOME/.bin:/usr/local/bin:$HOME/workspace/dotfiles/bin:$PATH"
 eval "$(hub alias -s)"
 source $(brew --prefix nvm)/nvm.sh
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
@@ -35,3 +36,4 @@ export GREP_OPTIONS='--color=auto';
 
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
+

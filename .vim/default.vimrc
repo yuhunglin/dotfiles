@@ -15,9 +15,6 @@ set encoding=utf-8
 set backspace=indent,eol,start " Fix problems with backspace in insert mode
 syntax on
 
-" python linting
-autocmd BufWritePost *.py call Flake8()
-
 " coffeescript whitespace
 autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
@@ -194,3 +191,6 @@ map <silent> <Leader>l :TestLast<CR>
 map <silent> <Leader>g :TestVisit<CR>
 
 let g:ConqueTerm_ReadUnfocused = 1
+
+" Jedi-vim
+let g:jedi#popup_on_dot = 0
