@@ -1,0 +1,184 @@
+#!/bin/sh
+
+# NOTE: Setting SHELL_RCFILE to "$HOME/.zshrc" will trigger
+# switching the shell to zsh as well.
+SHELL_RCFILE="$HOME/.bashrc"
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\n$fmt\n" "$@"
+}
+
+append_to_file() {
+  local file="$1"
+  local text="$2"
+
+  # When using zshrc, .zshrc.local is sometimes used
+  # as the filename instead for custom user config.
+  if [ "$file" = "$HOME/.zshrc" ]; then
+    if [ -w "$HOME/.zshrc.local" ]; then
+      file="$HOME/.zshrc.local"
+    else
+      file="$HOME/.zshrc"
+    fi
+  fi
+
+  if ! grep -Fqs "$text" "$file"; then
+    printf "\n%s\n" "$text" >> "$file"
+  fi
+}
+
+# shellcheck disable=SC2154
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+
+set -e
+
+if [ ! -d "$HOME/.bin/" ]; then
+  mkdir "$HOME/.bin"
+fi
+
+if [ ! -f "$SHELL_RCFILE" ]; then
+  touch "$SHELL_RCFILE"
+fi
+
+# shellcheck disable=SC2016
+append_to_file "$SHELL_RCFILE" 'export PATH="$HOME/.bin:$PATH"'
+
+case "$SHELL_RCFILE" in
+  *.zshrc*)
+    # Change shell to zsh if not already set
+    case "$SHELL" in
+      */zsh) : ;;
+      *)
+        fancy_echo "Changing your shell to zsh ..."
+          chsh -s "$(which zsh)"
+        ;;
+    esac
+  ;;
+esac
+
+brew_install_or_upgrade() {
+  if brew_is_installed "$1"; then
+    if brew_is_upgradable "$1"; then
+      fancy_echo "Upgrading %s ..." "$1"
+      brew upgrade "$@"
+    else
+      fancy_echo "Already using the latest version of %s. Skipping ..." "$1"
+    fi
+  else
+    fancy_echo "Installing %s ..." "$1"
+    brew install "$@"
+  fi
+}
+
+brew_is_installed() {
+  brew list -1 | grep -Fqx "$1"
+}
+
+brew_is_upgradable() {
+  ! brew outdated --quiet "$1" >/dev/null
+}
+
+brew_tap_is_installed() {
+  brew tap | ag "$1" > /dev/null
+}
+
+brew_tap() {
+  if ! brew_tap_is_installed "$1"; then
+    fancy_echo "Tapping $1..."
+    brew tap "$1" 2> /dev/null
+  fi
+}
+
+brew_cask_expand_alias() {
+  brew cask info "$1" 2>/dev/null | head -1 | awk '{gsub(/:/, ""); print $1}'
+}
+
+brew_cask_is_installed() {
+  local NAME
+  NAME=$(brew_cask_expand_alias "$1")
+  brew cask list -1 | grep -Fqx "$NAME"
+}
+
+app_is_installed() {
+  local app_name
+  app_name=$(echo "$1" | cut -d'-' -f1)
+  find /Applications -iname "$app_name*" -maxdepth 1 | egrep '.*' > /dev/null
+}
+
+brew_cask_install() {
+  if app_is_installed "$1" || brew_cask_is_installed "$1"; then
+    fancy_echo "$1 is already installed. Skipping..."
+  else
+    fancy_echo "Installing $1..."
+    brew cask install "$@"
+  fi
+}
+
+#### Script START ####
+
+if ! command -v brew >/dev/null; then
+  fancy_echo "Installing Homebrew ..."
+    curl -fsS \
+      'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+
+    # shellcheck disable=SC2016
+    append_to_file "$SHELL_RCFILE" 'export PATH="/usr/local/bin:$PATH"'
+else
+  fancy_echo "Homebrew already installed. Skipping ..."
+fi
+
+fancy_echo "Updating Homebrew formulas ..."
+brew update
+
+brew_install_or_upgrade 'git'
+
+# Enable support for git osx credential helper
+git config --global credential.helper osxkeychain
+
+brew_install_or_upgrade 'the_silver_searcher'
+
+brew_tap 'homebrew/services'
+
+brew_install_or_upgrade 'postgresql'
+fancy_echo 'Restarting postgres...'
+brew services restart postgresql
+
+brew_install_or_upgrade 'redis'
+fancy_echo 'Restarting redis...'
+brew services restart redis
+
+brew_install_or_upgrade 'imagemagick'
+brew_install_or_upgrade 'qt'
+
+brew_install_or_upgrade 'hub'
+# shellcheck disable=SC2016
+append_to_file "$SHELL_RCFILE" 'eval "$(hub alias -s)"'
+
+brew_install_or_upgrade 'node'
+brew_install_or_upgrade 'python'
+
+if ! pip list | ag "virtualenvwrapper" > /dev/null; then
+  fancy_echo 'Installing virtualenvwrapper...'
+  pip install virtualenvwrapper
+  append_to_file "$SHELL_RCFILE" 'export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3'
+  append_to_file "$SHELL_RCFILE" 'export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv'
+  append_to_file "$SHELL_RCFILE" 'source /usr/local/bin/virtualenvwrapper.sh'
+fi
+
+brew_tap 'caskroom/cask'
+
+brew_install_or_upgrade 'brew-cask'
+
+brew_tap 'caskroom/versions'
+
+
+brew_cask_install 'slack'
+
+if [ -f "$HOME/.laptop.local" ]; then
+  . "$HOME/.laptop.local"
+fi
+
+#### Script END ####
