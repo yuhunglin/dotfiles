@@ -24,3 +24,5 @@ export THEME_BATTERY_PERCENTAGE_CHECK=false
 source $BASH_IT/bash_it.sh
 
 alias be="bundle exec"
+alias tc-mount="/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt --text -k '' --protect-hidden=no --mount ~/Dropbox/dev /Volumes/STUFF && vi /Volumes/STUFF/keys.txt"
+alias tc-dismount="/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt --text --dismount ~/Dropbox/dev /Volumes/STUFF"
