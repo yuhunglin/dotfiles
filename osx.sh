@@ -145,6 +145,7 @@ addloginitem /Applications/Flycut.app
 addloginitem ~/Applications/Caffeine.app
 addloginitem ~/Applications/ShiftIt.app
 addloginitem ~/Applications/Jing.app
+addloginitem ~/Applications/Dropbox.app
 
 killall SystemUIServer
 killall Terminal
