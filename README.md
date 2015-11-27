@@ -43,6 +43,16 @@ PluginInstall
 ```
 
 - Dock icon suggestions
+  - Finder
+  - Iterm
+  - Google Keep
+  - Chrome
+  - Adium
+  - Slack
+  - ITunes
+  - Evernote
+  - Activity Monitor
+  - Preferences
 
 
 ## Credits
