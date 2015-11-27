@@ -8,9 +8,9 @@ if [ -f "$HOME/workspace/dotfiles/brew.sh" ]; then
 fi
 
 # Links and copies up some dotfiles
-#if [ -f "$HOME/workspace/dotfiles/link.sh" ]; then
-#  . "$HOME/workspace/dotfiles/link.sh"
-#fi
+if [ -f "$HOME/workspace/dotfiles/link.sh" ]; then
+  . "$HOME/workspace/dotfiles/link.sh"
+fi
 
 # Installs npm packages globally
 if [ -f "$HOME/workspace/dotfiles/package.json" ]; then
