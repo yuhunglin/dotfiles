@@ -2,13 +2,9 @@ export PATH="$HOME/.bin:/usr/local/bin:$HOME/workspace/dotfiles/bin:$PATH"
 
 eval "$(hub alias -s)"
 source $(brew --prefix nvm)/nvm.sh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-
-source /usr/local/bin/virtualenvwrapper.sh
 
 # Make vim the default editor.
 export EDITOR='vim';

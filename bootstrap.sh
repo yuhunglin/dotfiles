@@ -20,12 +20,13 @@ fi
 # Install Ruby
 rbenv install 2.2.2
 rbenv global 2.2.2
+rbenv shell 2.2.2
 gem install bundler
 gem install sass
 
 # Install python goodies
 pip install --upgrade pip
-pip instal flake8
+pip install flake8
 
 # Install android sdk
 android update sdk --no-ui --filter 'platform-tools'
