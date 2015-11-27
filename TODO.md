@@ -1,6 +1,6 @@
 ## TODOs
 
-* Fill out README: bootstrap.sh should be the entry point.
+* ~~fill out README: bootstrap.sh should be the entry point.~~
 * De-dup functions defined in brew.sh vs laptop
 * Run this against a new/packer build to test
 * serverspec test coverage.

@@ -2,6 +2,7 @@
 
 ln -si ~/workspace/dotfiles/.laptop.local ~/.laptop.local
 ln -si ~/workspace/dotfiles/.vimrc ~/.vimrc
+ln -si ~/workspace/dotfiles/.gvimrc ~/.gvimrc
 ln -si ~/workspace/dotfiles/.vim/ ~/.vim
 ln -si ~/workspace/dotfiles/.bash_it/ ~/.bash_it
 ln -si ~/workspace/dotfiles/.gitconfig ~/.gitconfig
