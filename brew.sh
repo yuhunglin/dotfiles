@@ -67,7 +67,6 @@ brew_cask_install() {
 
 brew_install_or_upgrade 'vim'
 brew_cask_install 'macvim'
-brew_cask_install 'mongohub'
 brew_cask_install 'iterm2'
 brew_cask_install 'caffeine'
 brew_cask_install 'menumeters'
