@@ -56,4 +56,7 @@ PluginInstall
 
 
 ## Credits
-This laptop script is based on and inspired by [18F's laptop](https://github.com/18F/laptop) and [thoughtbot's laptop](https://github.com/thoughtbot/laptop) script.
+This laptop script is based on and inspired by:
+* [The original mathias dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [18F's laptop](https://github.com/18F/laptop)
+* [thoughtbot's laptop](https://github.com/thoughtbot/laptop) script.
