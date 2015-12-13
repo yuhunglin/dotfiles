@@ -96,3 +96,5 @@ brew_install_or_upgrade 'pyenv-virtualenv'
 brew_cask_install 'logitech-control-center'
 brew_cask_install 'spotify'
 brew_cask_install 'viscosity'
+brew_install_or_upgrade 'eot-utils'
+brew_install_or_upgrade 'fontforge' --with-python

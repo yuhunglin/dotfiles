@@ -15,6 +15,7 @@ set encoding=utf-8
 set backspace=indent,eol,start " Fix problems with backspace in insert mode
 syntax on
 
+" TODO: remove
 " coffeescript whitespace
 autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
@@ -26,9 +27,9 @@ set clipboard=unnamed
 
 " Whitespace
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
@@ -84,13 +85,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Copy current filename into system clipboard
 nnoremap <silent> <leader>cf :let @* = expand("%:~")<CR>
-
-" Paste last contents of what was yanked regardless of what was deleted after
-nnoremap <leader>p "0p
-nnoremap <leader>P "0P
-
-" Copy to clipboard
-vnoremap <C-C> "*y
 
 " Vertical split and move to new window
 nnoremap <leader>v <C-W>v<C-W>l
@@ -190,7 +184,6 @@ map <silent> <Leader>a :TestSuite<CR>
 map <silent> <Leader>l :TestLast<CR>
 map <silent> <Leader>g :TestVisit<CR>
 
-let g:ConqueTerm_ReadUnfocused = 1
-
+" TODO: remove
 " Jedi-vim
 let g:jedi#popup_on_dot = 0

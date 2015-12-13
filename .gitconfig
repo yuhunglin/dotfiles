@@ -23,7 +23,9 @@
 [user]
     name = Yu-Hung Lin
     email = yuhung@yuhunglin.com
+
 [push]
 	default = matching
+
 [credential]
 	helper = osxkeychain

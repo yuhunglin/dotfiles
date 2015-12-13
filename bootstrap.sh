@@ -24,7 +24,7 @@ fi
 gem install bundler
 gem install sass
 
-# Install python goodies
+# TODO: remove Install python goodies
 pip install --upgrade pip
 pip install flake8
 

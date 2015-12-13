@@ -12,6 +12,7 @@
 * ~~tc-mount/dismount aliases~~
 * ~~dropbox to startup~~
 * Look into bash_completion2 or zsh
+* Purge python and coffeescript related items
 
 ## Casks to explore
 * docker toolbox
