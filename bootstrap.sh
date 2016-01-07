@@ -17,10 +17,14 @@ if [ -f "$HOME/workspace/dotfiles/package.json" ]; then
   npm install -g "$HOME/workspace/dotfiles/"
 fi
 
+# Probably needs a source bashrc
+source ~/.bashrc
+
 # Install Ruby
-#rbenv install 2.2.2
-#rbenv global 2.2.2
-#rbenv shell 2.2.2
+rbenv install 2.2.2
+rbenv global 2.2.2
+rbenv shell 2.2.2
+rbenv rehash
 gem install bundler
 gem install sass
 

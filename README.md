@@ -28,6 +28,10 @@ git submodule update
 ~/.bash_it/install
 ~/workspace/dotfiles/link.sh
 ```
+- Kick off the more detailed script when the `mac` one finishes
+```
+~/workspace/dotfiles/./bootstrap.sh
+```
 
 - If brew complains eventually:
 ```
@@ -54,6 +58,14 @@ PluginInstall
   - Activity Monitor
   - Preferences
 
+- Open the following programs to finish installation
+  - Viscosity
+  - Dropbox
+  - Flycut
+  - Shiftit
+  - Adium
+  - Jing
+  - VLC
 
 ## Credits
 This laptop script is based on and inspired by:
