@@ -26,13 +26,11 @@ Plugin 'tpope/vim-abolish'
 " Utilities
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'rgarver/Kwbd.vim'
 Plugin 'embear/vim-localvimrc'
 Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'ZoomWin'
 Plugin 'godlygeek/tabular'
-Plugin 'carlobaldassi/ConqueTerm'
 
 " Testing
 Plugin 'janko-m/vim-test'
@@ -42,7 +40,6 @@ Plugin 'tpope/vim-fugitive'
 
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
-
 
 
 source ~/.vim/bundles-javascript.vimrc

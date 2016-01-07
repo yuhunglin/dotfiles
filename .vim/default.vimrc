@@ -15,10 +15,6 @@ set encoding=utf-8
 set backspace=indent,eol,start " Fix problems with backspace in insert mode
 syntax on
 
-" TODO: remove
-" coffeescript whitespace
-autocmd FileType coffee set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
-
 " ruby whitespace
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
@@ -130,9 +126,6 @@ map <leader>nf :NERDTreeFind<CR>
 " ZoomWin configuration
 map <leader><leader> :ZoomWin<CR>
 
-" Delete buffer without closing window
-nnoremap <silent> <leader>bd :Kwbd<CR>
-
 " CTags
 map <leader>rt :!ctags --extra=+f --exclude=tmp --exclude=node_modules -R * <CR><CR>
 map <leader>lt :TlistToggle<CR>
@@ -183,7 +176,3 @@ map <silent> <Leader>t :TestFile<CR>
 map <silent> <Leader>a :TestSuite<CR>
 map <silent> <Leader>l :TestLast<CR>
 map <silent> <Leader>g :TestVisit<CR>
-
-" TODO: remove
-" Jedi-vim
-let g:jedi#popup_on_dot = 0
