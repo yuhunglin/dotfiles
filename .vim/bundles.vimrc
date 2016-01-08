@@ -44,6 +44,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 
 source ~/.vim/bundles-javascript.vimrc
 source ~/.vim/bundles-ruby.vimrc
+source ~/.vim/bundles-elixir.vimrc
 source ~/.vim/bundles-python.vimrc
 
 call vundle#end()
