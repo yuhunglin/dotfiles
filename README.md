@@ -11,8 +11,8 @@ bash mac 2>&1 | tee ~/laptop.log
 
 - While the top level script is running
 ```
-ssh-keygen -t rsa -b 4096
 sudo scutil --set HostName <new name>
+ssh-keygen -t rsa -b 4096
 # Copy to github for the new machine
 cat ~/.ssh/id_rsa.pub
 mkdir ~/workspace/ && cd ~/workspace/
