@@ -160,22 +160,11 @@ append_to_file "$SHELL_RCFILE" 'eval "$(hub alias -s)"'
 brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'python'
 
-if ! pip list | ag "virtualenvwrapper" > /dev/null; then
-  fancy_echo 'Installing virtualenvwrapper...'
-  pip install virtualenvwrapper
-  append_to_file "$SHELL_RCFILE" 'export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3'
-  append_to_file "$SHELL_RCFILE" 'export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv'
-  append_to_file "$SHELL_RCFILE" 'source /usr/local/bin/virtualenvwrapper.sh'
-fi
+#brew_tap 'caskroom/cask'
 
-brew_tap 'caskroom/cask'
+#brew_install_or_upgrade 'brew-cask'
 
-brew_install_or_upgrade 'brew-cask'
-
-brew_tap 'caskroom/versions'
-
-
-brew_cask_install 'slack'
+#brew_tap 'caskroom/versions'
 
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"

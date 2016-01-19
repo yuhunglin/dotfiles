@@ -28,9 +28,9 @@ rbenv rehash
 gem install bundler
 gem install sass
 
-# TODO: remove Install python goodies
 pip install --upgrade pip
 pip install flake8
+pip install ansible
 
 # Install android sdk
 android update sdk --no-ui --filter 'platform-tools'

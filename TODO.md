@@ -12,7 +12,9 @@
 * ~~tc-mount/dismount aliases~~
 * ~~dropbox to startup~~
 * Look into bash_completion2 or zsh
-* Purge python and coffeescript related items
+* ~~Purge python and coffeescript related items~~
+* Potential issue with the desc cask updates (https://github.com/caskroom/homebrew-cask)
+
 
 ## Casks to explore
 * docker toolbox
