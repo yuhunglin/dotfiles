@@ -2,7 +2,14 @@
 
 source ~/.bash_profile
 
+if [[ "$OSTYPE" != "darwin"* ]]; then
+  echo "$0 : Will only run on Darwin"
+  exit 1
+fi
+
+###############################################################################
 # General
+###############################################################################
 ## Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
@@ -14,12 +21,12 @@ sudo systemsetup -setremotelogin on
 
 ## Menu bar hide some useless items
 defaults write com.apple.systemuiserver menuExtras -array \
-    "/opt/homebrew-cask/Caskroom/menumeters/latest/MenuMeters Installer.app/Contents/Resources/MenuMeters.prefPane/Contents/Resources/MenuMeterNet.menu" \
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu" \
-    "/opt/homebrew-cask/Caskroom/menumeters/latest/MenuMeters Installer.app/Contents/Resources/MenuMeters.prefPane/Contents/Resources/MenuCracker.menu"
+  "/opt/homebrew-cask/Caskroom/menumeters/latest/MenuMeters Installer.app/Contents/Resources/MenuMeters.prefPane/Contents/Resources/MenuMeterNet.menu" \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+  "/opt/homebrew-cask/Caskroom/menumeters/latest/MenuMeters Installer.app/Contents/Resources/MenuMeters.prefPane/Contents/Resources/MenuCracker.menu"
 
 ## Menu bar clock format
 defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  h:mm:ss a"
@@ -32,13 +39,18 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
+# Quit printer app after print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
 ## Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 ## Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+###############################################################################
 # Keyboard settings
+###############################################################################
 ## Keyboard repeat rates
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 0
@@ -59,14 +71,21 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Mouse settings
+###############################################################################
+# Mouse Settings
+###############################################################################
 ## Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 ## Force click
 defaults write NSGlobalDomain "com.apple.trackpad.forceClick" -bool false
 
+# Disable infrared receiver
+defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
+
+###############################################################################
 # Screen
+###############################################################################
 ## Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
@@ -76,7 +95,9 @@ defaults write com.apple.screencapture type -string "png"
 ## Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+###############################################################################
 # Finder
+###############################################################################
 ## Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
@@ -104,6 +125,9 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 ## Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Avoid creating .DS_Store files on USB volumes
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 ## Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
@@ -130,7 +154,23 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 ## Show the ~/Library folder
 chflags nohidden ~/Library
 
+###############################################################################
+# Preview                                                                     #
+###############################################################################
+
+# Do not restore last active document
+defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -bool false
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+###############################################################################
 # Dock
+###############################################################################
 # Set the icon size of Dock items to 45 pixels
 defaults write com.apple.dock tilesize -int 45
 
@@ -139,8 +179,9 @@ defaults write com.apple.dock tilesize -int 45
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 
-
-# Startup items
+###############################################################################
+# Startup Items
+###############################################################################
 addloginitem /Applications/Flycut.app
 addloginitem ~/Applications/Caffeine.app
 addloginitem ~/Applications/ShiftIt.app
