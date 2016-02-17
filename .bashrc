@@ -4,7 +4,6 @@ eval "$(hub alias -s)"
 source $(brew --prefix nvm)/nvm.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Make vim the default editor.
 export EDITOR='vim';
