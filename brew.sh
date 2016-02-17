@@ -99,3 +99,6 @@ brew_cask_install 'viscosity'
 brew_install_or_upgrade 'eot-utils'
 brew_install_or_upgrade 'fontforge' --with-python
 brew_install_or_upgrade 'elixir'
+brew_cask_install 'teamviewer'
+brew_cask_install 'slack'
+

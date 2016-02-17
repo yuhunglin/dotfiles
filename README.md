@@ -67,6 +67,8 @@ PluginInstall
   - Jing
   - VLC
 
+- Maybe install the printer?
+
 ## Credits
 This laptop script is based on and inspired by:
 * [The original mathias dotfiles](https://github.com/mathiasbynens/dotfiles)
