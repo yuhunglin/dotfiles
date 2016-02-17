@@ -27,6 +27,7 @@ rbenv shell 2.2.4
 rbenv rehash
 gem install bundler
 gem install sass
+gem install redcarpet
 
 pip install --upgrade pip
 pip install flake8

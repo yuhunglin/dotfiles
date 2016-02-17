@@ -31,6 +31,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'ZoomWin'
 Plugin 'godlygeek/tabular'
+Plugin 'greyblake/vim-preview'
 
 " Testing
 Plugin 'janko-m/vim-test'
