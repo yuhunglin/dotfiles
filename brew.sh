@@ -101,4 +101,4 @@ brew_install_or_upgrade 'fontforge' --with-python
 brew_install_or_upgrade 'elixir'
 brew_cask_install 'teamviewer'
 brew_cask_install 'slack'
-
+brew_install_or_upgrade 'heroku'
