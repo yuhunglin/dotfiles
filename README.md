@@ -62,7 +62,7 @@ PluginInstall
   - Viscosity
   - Dropbox
   - Flycut
-  - Shiftit
+  - Spectacle
   - Adium
   - Jing
   - VLC
