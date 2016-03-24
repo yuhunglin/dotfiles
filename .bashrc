@@ -32,3 +32,5 @@ export GREP_OPTIONS='--color=auto';
 # Android SDK
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+#Enable C-S forward history search
+stty -ixon

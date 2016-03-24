@@ -176,5 +176,3 @@ map <silent> <Leader>t :TestFile<CR>
 map <silent> <Leader>a :TestSuite<CR>
 map <silent> <Leader>l :TestLast<CR>
 map <silent> <Leader>g :TestVisit<CR>
-
-map <silent> <C-M> :Preview<CR>

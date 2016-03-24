@@ -41,6 +41,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'hashivim/vim-hashicorp-tools'
 
 
 source ~/.vim/bundles-javascript.vimrc
