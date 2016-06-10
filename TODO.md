@@ -14,6 +14,7 @@
 * Look into bash_completion2 or zsh
 * ~~Purge python and coffeescript related items~~
 * Potential issue with the desc cask updates (https://github.com/caskroom/homebrew-cask)
+* Something to maintain hashicorp bin files
 
 
 ## Casks to explore
