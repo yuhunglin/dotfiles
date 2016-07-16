@@ -34,3 +34,6 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 #Enable C-S forward history search
 stty -ixon
+
+# Docker machine settings
+eval "$(docker-machine env dev)"
