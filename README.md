@@ -54,7 +54,6 @@ PluginInstall
   - Adium
   - Slack
   - ITunes
-  - Evernote
   - Activity Monitor
   - Preferences
 
