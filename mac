@@ -160,12 +160,6 @@ append_to_file "$SHELL_RCFILE" 'eval "$(hub alias -s)"'
 brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'python'
 
-#brew_tap 'caskroom/cask'
-
-#brew_install_or_upgrade 'brew-cask'
-
-#brew_tap 'caskroom/versions'
-
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"
 fi
