@@ -21,8 +21,8 @@
     trustctime = false
 
 [user]
-    name = Yu-Hung Lin
-    email = yuhung@yuhunglin.com
+  name = Yu-Hung Lin
+  email = 1497839+yuhunglin@users.noreply.github.com #yuhung@yuhunglin.com
 
 [push]
 	default = matching

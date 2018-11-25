@@ -22,6 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
+Plugin 'christoomey/vim-sort-motion'
 
 " Utilities
 Plugin 'bling/vim-airline'
