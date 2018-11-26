@@ -102,63 +102,62 @@ brew install wget --with-iri
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
+brew link --overwrite gnupg
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
+brew_install_or_upgrade 'ag'
+brew_install_or_upgrade 'awscli'
 brew_install_or_upgrade 'grep'
+brew_install_or_upgrade 'imagemagick'
+brew_install_or_upgrade 'jq'
+brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'openssh'
+brew_install_or_upgrade 'packer'
+brew_install_or_upgrade 'pv'
+brew_install_or_upgrade 'pyenv'
+brew_install_or_upgrade 'python3'
+brew_install_or_upgrade 'rbenv'
+brew_install_or_upgrade 'rbenv-vars'
+brew_install_or_upgrade 'rename'
+brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'screen'
-#brew install homebrew/php/php56 --with-gmp
-#
-## Install font tools.
-#brew tap bramstein/webfonttools
-#brew install sfnt2woff
-#brew install sfnt2woff-zopfli
-#brew install woff2
-#
-## Install some CTF tools; see https://github.com/ctfs/write-ups.
-#brew install aircrack-ng
-#brew install bfg
-#brew install binutils
-#brew install binwalk
-#brew install cifer
-#brew install dex2jar
-#brew install dns2tcp
-#brew install fcrackzip
-#brew install foremost
-#brew install hashpump
-#brew install hydra
-#brew install john
-#brew install knock
-#brew install netpbm
-#brew install nmap
-#brew install pngcheck
-#brew install socat
-#brew install sqlmap
-#brew install tcpflow
-#brew install tcpreplay
-#brew install tcptrace
-#brew install ucspi-tcp # `tcpserver` etc.
-#brew install xpdf
-#brew install xz
-#
-## Install other useful binaries.
-#brew install ack
-##brew install exiv2
-#brew install git
-#brew install git-lfs
-#brew install imagemagick --with-webp
-#brew install lua
-#brew install lynx
-#brew install p7zip
-#brew install pigz
-#brew install pv
-#brew install rename
-#brew install rlwrap
-#brew install ssh-copy-id
-#brew install tree
-#brew install vbindiff
-#brew install zopfli
-#
+brew_install_or_upgrade 'ssh-copy-id'
+brew_install_or_upgrade 'tfenv'
+
+# Init homebrew services
+brew services
+brew cask
+
+brew_tap 'trinitronx/homebrew-truecrypt'
+brew_tap 'caskroom/drivers'
+
+brew_cask_install 'android-file-transfer'
+brew_cask_install 'android-sdk'
+brew_cask_install 'caffeine'
+brew_cask_install 'displaylink'
+brew_cask_install 'docker'
+brew_cask_install 'dropbox'
+brew_cask_install 'flycut'
+brew_cask_install 'google-chrome'
+brew_cask_install 'iterm2'
+brew_cask_install 'jing'
+brew_cask_install 'logitech-control-center'
+brew_cask_install 'logitech-unifying'
+brew_cask_install 'slack'
+brew_cask_install 'spectacle'
+brew_cask_install 'spotify'
+brew_cask_install 'sshfs'
+brew_cask_install 'teamviewer'
+brew_cask_install 'truecrypt'
+brew_cask_install 'vagrant'
+brew_cask_install 'vimr'
+brew_cask_install 'virtualbox'
+brew_cask_install 'virtualbox-extension-pack'
+brew_cask_install 'viscosity'
+brew_cask_install 'vlc'
+
+tfenv install 0.11.10
+
 ## Remove outdated versions from the cellar.
-#brew cleanup
+brew cleanup
