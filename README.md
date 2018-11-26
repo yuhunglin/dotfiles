@@ -17,9 +17,11 @@ cat ~/.ssh/id_rsa.pub
 mkdir ~/workspace/ && cd ~/workspace/
 git clone git@github.com:yuhunglin/dotfiles.git
 cd ~/workspace/dotfiles
-git submodule init
-git submodule update
+#git submodule init
+#git submodule update
 ```
+
+1. To run the rest of the install: `cd ~/workspace/dotfiles && ./run.sh`
 
 
 ### Specify the `$PATH`
