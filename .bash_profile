@@ -32,11 +32,6 @@ elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
 
-# Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-	complete -o default -o nospace -F _git g;
-fi;
-
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
@@ -53,3 +48,19 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 #Enable C-S forward history search
 stty -ixon
 
+#Bash-it stuff
+# Path to the bash it configuration
+export BASH_IT="$HOME/.bash_it"
+
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='bobby'
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
+export THEME_CLOCK_CHECK=true
+export THEME_BATTERY_PERCENTAGE_CHECK=false
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
