@@ -74,3 +74,7 @@ brew update
 
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'neovim'
+
+# Enable support for git osx credential helper
+git config --global credential.helper osxkeychain
+
