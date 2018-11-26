@@ -75,6 +75,13 @@ brew update
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'neovim'
 
+mkdir -p ~/.config/nvim/
+cat <<EOF >~/.config/nvim/init.vim
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+EOF
+
 # Enable support for git osx credential helper
 git config --global credential.helper osxkeychain
 
