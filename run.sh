@@ -9,3 +9,8 @@ fi
 if [ -f "$HOME/workspace/dotfiles/link.sh" ]; then
   . "$HOME/workspace/dotfiles/link.sh"
 fi
+
+# Tinker with os x settings
+if [ -f "$HOME/workspace/dotfiles/.macos" ]; then
+  . "$HOME/workspace/dotfiles/.macos"
+fi

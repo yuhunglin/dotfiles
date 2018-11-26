@@ -11,6 +11,8 @@ The `bootstrap.sh` should be sufficient to get Command Line tools, git and homeb
 While the top level script is running
 ```
 sudo scutil --set HostName <new name>
+sudo scutil --set ComputerName <new name>
+sudo scutil --set LocalHostName <new name>
 ssh-keygen -t rsa -b 4096
 # Copy to github for the new machine
 cat ~/.ssh/id_rsa.pub
