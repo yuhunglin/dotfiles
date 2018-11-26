@@ -23,6 +23,34 @@ cd ~/workspace/dotfiles
 
 1. To run the rest of the install: `cd ~/workspace/dotfiles && ./run.sh`
 
+1. Vim plugin install
+```
+vim .
+PluginInstall
+```
+
+- Dock icon suggestions
+  - Finder
+  - Iterm
+  - Google Keep
+  - Chrome
+  - Adium
+  - Slack
+  - ITunes
+  - Activity Monitor
+  - Preferences
+
+- Open the following programs to finish installation
+  - Viscosity
+  - Dropbox
+  - Flycut
+  - Spectacle
+  - Adium
+  - Jing
+  - VLC
+
+- Maybe install the printer?
+
 
 ### Specify the `$PATH`
 
