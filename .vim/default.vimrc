@@ -2,7 +2,9 @@ set nocompatible
 
 let mapleader = ","
 color vividchalk
-set guifont=monaco:h16
+if has("gui_macvim")
+  set guifont=Monaco:h16
+endif
 let &t_Co=256
 
 filetype plugin indent on
@@ -40,7 +42,6 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 set laststatus=2 " Status bar
-set showcmd " Display incomplete commands
 
 " Turn off backup files
 set noswapfile
@@ -48,9 +49,15 @@ set nobackup
 set nowb
 
 " Speed up
-set ttyfast
-set ttyscroll=3
-set lazyredraw
+if has("nvim")
+  set nolazyredraw
+  set noshowcmd
+else
+  set ttyfast
+  set ttyscroll=3
+  set showcmd " Display incomplete commands
+  set lazyredraw
+endif
 
 " Disable jsDoc trying to steal <C-l>
 let g:jsdoc_default_mapping = 0
