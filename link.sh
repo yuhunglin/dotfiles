@@ -15,3 +15,6 @@ cp -i ~/workspace/dotfiles/.inputrc ~/.inputrc
 cp -i ~/workspace/dotfiles/.curlrc ~/.curlrc
 cp -i ~/workspace/dotfiles/.wgetrc ~/.wgetrc
 cp -i ~/workspace/dotfiles/.screenrc ~/.screenrc
+cp -i ~/workspace/dotfiles/.gitconfig ~/.gitconfig
+
+cp -i ~/workspace/dotfiles/.extras.sample ~/.extras

@@ -58,7 +58,8 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+  gpgsign = true
+  # configure signing key manually in .extras
 
 [diff]
 
