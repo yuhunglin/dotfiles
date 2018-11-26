@@ -73,3 +73,4 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 brew_install_or_upgrade 'git'
+brew_install_or_upgrade 'neovim'

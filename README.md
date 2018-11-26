@@ -1,40 +1,26 @@
-# Mathias’s dotfiles
+# Dotfiles
 
-![Screenshot of my shell prompt](https://i.imgur.com/EkEtphC.png)
+Reworked off off a mathias base for high sierra 10.13.
 
-## Installation
+## Installation (from a new machine)
 
-**Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+The `bootstrap.sh` should be sufficient to get Command Line tools, git and homebrew installed on a vanilla machine.
 
-### Using Git and the bootstrap script
+1. `mkdir -p ~/workspace && cd ~/workspace && curl --remote-name https://raw.githubusercontent.com/yuhunglin/dotfiles/sierra/bootstrap.sh && chmod +x bootstrap.sh && ./bootstrap.sh`
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
-
-```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+While the top level script is running
+```
+sudo scutil --set HostName <new name>
+ssh-keygen -t rsa -b 4096
+# Copy to github for the new machine
+cat ~/.ssh/id_rsa.pub
+mkdir ~/workspace/ && cd ~/workspace/
+git clone git@github.com:yuhunglin/dotfiles.git
+cd ~/workspace/dotfiles
+git submodule init
+git submodule update
 ```
 
-To update, `cd` into your local `dotfiles` repository and then:
-
-```bash
-source bootstrap.sh
-```
-
-Alternatively, to update while avoiding the confirmation prompt:
-
-```bash
-set -- -f; source bootstrap.sh
-```
-
-### Git-free install
-
-To install these dotfiles without Git:
-
-```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,.osx,LICENSE-MIT.txt}
-```
-
-To update later on, just run that command again.
 
 ### Specify the `$PATH`
 

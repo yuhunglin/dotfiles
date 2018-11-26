@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# $HOME/.bin
+# /usr/local/bin
+# $HOME/workspace/dotfiles/bin
+export PATH="$HOME/.bin:/usr/local/bin:$HOME/workspace/dotfiles/bin:$PATH"
