@@ -826,6 +826,7 @@ bin/addLoginItem /Applications/Caffeine.app
 bin/addLoginItem /Applications/Spectacle.app
 bin/addLoginItem /Applications/Jing.app
 bin/addLoginItem /Applications/Dropbox.app
+bin/addLoginItem /Applications/Keybase.app
 
 for app in "Activity Monitor" \
 	"Address Book" \

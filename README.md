@@ -36,7 +36,6 @@ PluginInstall
   - Iterm
   - Google Keep
   - Chrome
-  - Adium
   - Slack
   - ITunes
   - Activity Monitor
@@ -47,7 +46,6 @@ PluginInstall
   - Dropbox
   - Flycut
   - Spectacle
-  - Adium
   - Jing
   - VLC
 
