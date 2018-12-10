@@ -11,12 +11,13 @@ gem install bundler
 
 # TODO: probably sort out the version problem
 #pip install --upgrade pip
+pip3 install --user pynvim
 
 # Install android sdk
 #android update sdk --no-ui --filter 'platform-tools'
 
-# Auto install vundle plugins
-vim +PluginInstall +qall
+# Auto install vim-plug plugins
+vim +PlugInstall +qall
 
 # Bash-it bootstrap
 if bash-it > /dev/null; then

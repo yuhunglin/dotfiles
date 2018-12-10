@@ -2,6 +2,7 @@ set nocompatible
 
 let mapleader = ","
 color vividchalk
+set background=dark
 if has("gui_macvim")
   set guifont=Monaco:h16
 endif
@@ -134,12 +135,12 @@ map <leader>nf :NERDTreeFind<CR>
 map <leader><leader> :ZoomWin<CR>
 
 " CTags
-map <leader>rt :!ctags --extra=+f --exclude=tmp --exclude=node_modules -R * <CR><CR>
-map <leader>lt :TlistToggle<CR>
+map <leader>rt :!ctags --extras=+f --exclude=tmp --exclude=node_modules -R * <CR><CR>
+map <leader>lt :TagbarToggle<CR>
 let Tlist_Use_Right_Window = 1
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+"let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " Remember last location in file
 if has("autocmd")
@@ -160,9 +161,38 @@ au BufRead,BufNewFile *.md setlocal wrap
 map <leader>M :set syntax=markdown<CR>:set wrap<CR>:set spell<CR>
 
 " Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_enable_signs=1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+" Neomake
+" let g:neomake_verbose = 3
+let g:neomake_logfile = '/tmp/neomake.log'
+"let g:neomake_ruby_reek_maker_errorformat =
+        "\ '%E%.%#: Racc::ParseError: %f:%l :: %m,' .
+        "\ '%W%f:%l: %m'
+"let g:neomake_ruby_reek_maker = {
+    "\ 'args': ['--single-line'],
+    "\ 'errorformat': g:neomake_ruby_reek_maker_errorformat,
+    "\ }
+"let b:neomake_ruby_rubocop_exe = \"~/.rvm/gems/ruby-2.4.0/bin/rubocop"
+"let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
+
+function! MyOnBattery()
+  if filereadable('/usr/bin/pmset')
+    silent exe "!pmset -g batt | grep discharging"
+    return !v:shell_error
+  else
+    return readfile('/sys/class/power_supply/AC/online') == ['0']
+  endif
+endfunction
+if MyOnBattery()
+  call neomake#configure#automake('w')
+else
+  call neomake#configure#automake('inrw', 1000)
+endif
 
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
@@ -183,3 +213,24 @@ map <silent> <Leader>t :TestFile<CR>
 map <silent> <Leader>a :TestSuite<CR>
 map <silent> <Leader>l :TestLast<CR>
 map <silent> <Leader>g :TestVisit<CR>
+
+" https://github.com/FooSoft/vim-argwrap
+map <silent> <Leader>w :ArgWrap<CR>
+
+" deoplete -
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#source('buffer', 'rank', 501)
+call deoplete#custom#source('_', 'max_candidates', 5)
+let g:deoplete#disable_auto_complete = 1
+" deoplete-go settings
+"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+"let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+" devdocs - rhysd/devdocs.vim
+nmap K <Plug>(devdocs-under-cursor)
+let g:devdocs_filetype_map = {
+    \   'javascript.jsx': 'react',
+    \   'javascript.test': 'chai',
+    \ }
+
+map <silent> <Leader>ig :IndentLinesToggle<CR>

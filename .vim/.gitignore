@@ -1,4 +1,5 @@
 .netrwhist
-bundle/*
-!bundle/vundle/
+# gets loading in automatically
+autoload/plug.vim
+plugged/*
 .vim

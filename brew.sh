@@ -131,6 +131,9 @@ brew cask
 
 brew_tap 'trinitronx/homebrew-truecrypt'
 brew_tap 'caskroom/drivers'
+brew_tap 'universal-ctags/universal-ctags'
+
+brew install --HEAD universal-ctags
 
 brew_cask_install 'android-file-transfer'
 brew_cask_install 'android-sdk'

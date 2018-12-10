@@ -1,2 +1,2 @@
-source ~/.vim/bundles.vimrc
+source ~/.vim/plugs.vimrc
 source ~/.vim/default.vimrc
