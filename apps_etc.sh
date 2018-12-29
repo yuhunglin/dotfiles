@@ -9,6 +9,9 @@ rbenv global 2.5.3
 rbenv rehash
 gem install bundler
 
+# Config for pq gem
+bundle config --local build.pg --with-opt-dir="/usr/local/opt/libpq"
+
 # TODO: probably sort out the version problem
 #pip install --upgrade pip
 pip3 install --user pynvim
