@@ -124,6 +124,7 @@ brew_install_or_upgrade 'rename'
 brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'screen'
 brew_install_or_upgrade 'ssh-copy-id'
+brew_install_or_upgrade 'telnet'
 brew_install_or_upgrade 'tfenv'
 
 # Init homebrew services

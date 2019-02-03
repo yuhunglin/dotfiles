@@ -64,3 +64,7 @@ export THEME_BATTERY_PERCENTAGE_CHECK=false
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

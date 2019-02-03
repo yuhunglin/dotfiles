@@ -11,10 +11,15 @@ gem install bundler
 
 # Config for pq gem
 bundle config --local build.pg --with-opt-dir="/usr/local/opt/libpq"
+# psql and pg_* bin goodies
+brew link --force libpq
 
 # TODO: probably sort out the version problem
 #pip install --upgrade pip
 pip3 install --user pynvim
+
+# configure NVM
+mkdir -p ~/.nvm
 
 # Install android sdk
 #android update sdk --no-ui --filter 'platform-tools'
