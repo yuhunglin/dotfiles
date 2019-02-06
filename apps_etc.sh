@@ -8,6 +8,7 @@ rbenv global 2.5.3
 #rbenv shell 2.5.3
 rbenv rehash
 gem install bundler
+gem install terraform_landscape
 
 # Config for pq gem
 bundle config --local build.pg --with-opt-dir="/usr/local/opt/libpq"
