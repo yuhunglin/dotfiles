@@ -23,9 +23,12 @@
 [user]
   name = Yu-Hung Lin
   email = 1497839+yuhunglin@users.noreply.github.com #yuhung@yuhunglin.com
+	signingkey = 7F416953E5834F2F0E5833DAB5DB8B54A93707C9
 
 [push]
 	default = matching
 
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
