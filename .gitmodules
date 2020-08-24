@@ -3,3 +3,6 @@
 	url = https://github.com/Bash-it/bash-it.git
   shallow = true
 	ignore = dirty
+[submodule "meta/dotbot"]
+	path = meta/dotbot
+	url = https://github.com/anishathalye/dotbot
