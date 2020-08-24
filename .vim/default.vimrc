@@ -21,6 +21,13 @@ syntax on
 " ruby whitespace
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
 
+" vue autoload
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
+" json autoload
+"au BufRead,BufNewFile,BufReadPost *.json set syntax=json
+"au BufRead,BufNewFile,BufReadPost *.json setlocal filetype=json
+
 " Clipboard
 set clipboard=unnamed
 
@@ -109,7 +116,7 @@ map <leader>b :CtrlPBuffer<CR>
 map <leader>cpc :CtrlPClearCache<CR>
 
 " Make CtrlP use Ag for listing the files. Much faster and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --hidden --ignore .git --nocolor -g ""'
 
 " CtrlP auto cache clearing.
 function! SetupCtrlP()
@@ -132,7 +139,7 @@ map <leader>nt :NERDTreeToggle<CR>
 map <leader>nf :NERDTreeFind<CR>
 
 " ZoomWin configuration
-map <leader><leader> :ZoomWin<CR>
+map <leader><leader> :MaximizerToggle!<CR>
 
 " CTags
 map <leader>rt :!ctags --extras=+f --exclude=tmp --exclude=node_modules -R * <CR><CR>
@@ -150,9 +157,6 @@ endif
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-
-" Add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
 
 " Add markdown syntax highlighting and spellcheck
 au BufRead,BufNewFile *.md set ft=markdown
@@ -176,7 +180,9 @@ let g:neomake_logfile = '/tmp/neomake.log'
     "\ }
 "let b:neomake_ruby_rubocop_exe = \"~/.rvm/gems/ruby-2.4.0/bin/rubocop"
 "let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
+let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
 let g:neomake_javascript_enabled_makers = ['eslint']
+au BufWinEnter,BufWritePost *.js,*.jsx,*.vue Neomake
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
 
@@ -201,7 +207,21 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
 " Open up a git grep line, with a quote started for the search
-nnoremap <leader>ag :Ag<space>
+function Search(string) abort
+  let saved_shellpipe = &shellpipe
+  let &shellpipe = '>'
+  try
+    execute 'Ack!' shellescape(a:string, 1)
+  finally
+    let &shellpipe = saved_shellpipe
+  endtry
+endfunction
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case --hidden --ignore .git'
+endif
+"cnoreabbrev Ack Ack!
+nnoremap <leader>ag :Ack!<space>
+"nnoremap <leader>ag :call Search("")<left><left>
 
 " Toggle pasting to preserve format when pasting from clipboard into buffer
 nnoremap <leader>pt :set invpaste paste?<cr>
@@ -233,4 +253,6 @@ let g:devdocs_filetype_map = {
     \   'javascript.test': 'chai',
     \ }
 
+" indentline
 map <silent> <Leader>ig :IndentLinesToggle<CR>
+let g:indentLine_concealcursor=""

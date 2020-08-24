@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 
 " Files
 Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
 
 " Text
 Plug 'scrooloose/nerdcommenter'
@@ -39,7 +38,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/ZoomWin'
+Plug 'szw/vim-maximizer'
 Plug 'godlygeek/tabular'
 Plug 'greyblake/vim-preview'
 Plug 'rhysd/devdocs.vim'
@@ -54,6 +53,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile'] }
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'Yggdroot/indentLine'
+Plug 'elzr/vim-json'
 
 source ~/.vim/plugs-javascript.vimrc
 source ~/.vim/plugs-ruby.vimrc
