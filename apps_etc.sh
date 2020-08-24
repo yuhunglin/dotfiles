@@ -22,6 +22,8 @@ pip3 install --user pynvim
 # configure NVM
 mkdir -p ~/.nvm
 
+npm install --save-dev eslint eslint-plugin-vue
+
 # Install android sdk
 #android update sdk --no-ui --filter 'platform-tools'
 
