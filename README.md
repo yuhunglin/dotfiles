@@ -64,3 +64,8 @@ export PATH="/usr/local/bin:$PATH"
 ### Extras
 
 - `.extras.sample` is copied over to $HOME and an easy way to slot in things that cannot be committed easily.
+
+### TODO:
+* bin/confd
+* bin/levant
+* bin/vault-unsealer
