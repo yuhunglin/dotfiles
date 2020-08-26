@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO: deprecate
 
 # Install more brew packages
 if [ -f "$HOME/workspace/dotfiles/brew.sh" ]; then

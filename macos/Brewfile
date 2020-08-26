@@ -1,0 +1,59 @@
+tap "homebrew/cask-drivers"
+tap "universal-ctags/universal-ctags"
+
+brew "coreutils"
+brew "findutils"
+brew "gnu-sed", args: ["with-default-names"]
+brew "wget", args: ["with-iri"]
+brew "gnupg", link: true
+brew "vim", args: ["--with-override-system-vi"]
+
+brew 'ag'
+brew 'awscli'
+brew 'grep'
+brew 'imagemagick'
+brew 'jq'
+brew 'libpq'
+brew 'md5sha1sum'
+brew 'nvm'
+brew 'openssh'
+brew 'packer'
+brew 'pv'
+brew 'pyenv'
+brew 'python3'
+brew 'rbenv'
+brew 'rbenv-vars'
+brew 'rename'
+brew 'ruby-build'
+brew 'screen'
+brew 'ssh-copy-id'
+brew 'telnet'
+brew 'tfenv'
+brew 'universal-ctags'
+
+#cask 'android-file-transfer'
+#cask 'android-sdk'
+#cask 'caffeine'
+#cask 'displaylink'
+#cask 'docker'
+#cask 'dropbox'
+#cask 'flycut'
+#cask 'google-chrome'
+#cask 'google-drive-file-stream'
+#cask 'iterm2'
+#cask 'keybase'
+#cask 'licecap'
+#cask 'ngrok'
+#cask 'sketch'
+#cask 'slack'
+#cask 'spectacle'
+#cask 'spotify'
+#cask 'sshfs'
+#cask 'teamviewer'
+#cask 'truecrypt'
+#cask 'vagrant'
+#cask 'vimr'
+#cask 'virtualbox'
+#cask 'virtualbox-extension-pack'
+#cask 'viscosity'
+#cask 'vlc'

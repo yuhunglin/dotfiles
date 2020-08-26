@@ -16,3 +16,4 @@ Thumbs.db
 .vim/bundle/
 .env
 node_modules
+Brewfile*.lock.json

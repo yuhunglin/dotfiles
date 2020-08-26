@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- link:
+    ~/.Brewfile: macos/Brewfile
+- brewfile:
+    file: macos/Brewfile
+    stdout: true
+    stderr: true
+- shell:
+  -
+    command: [brew cleanup, Brew cleanup]
+    stdout: true
+    stderr: true

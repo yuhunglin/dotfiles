@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# TODO: deprecate
 
 ln -si ~/workspace/dotfiles/.vimrc ~/.vimrc
 ln -si ~/workspace/dotfiles/.gvimrc ~/.gvimrc

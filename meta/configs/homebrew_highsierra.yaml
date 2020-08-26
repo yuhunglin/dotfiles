@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- link:
+    ~/.Brewfile_highsierra: macos/Brewfile_highsierra
+- brewfile:
+    file: macos/Brewfile_highsierra
+    stdout: true
+    stderr: true
+- shell:
+  - [scripts/osx_set_bash_default_shell.sh, Set brew bash to default shell]

@@ -1,0 +1,3 @@
+# todo: also something about default shell brew.sh:94
+brew "bash"
+brew "bash-completion@2"
