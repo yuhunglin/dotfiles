@@ -1,24 +1,56 @@
 # Dotfiles
 
-Reworked off off a mathias base for high sierra 10.13.
+* [???] Reworked off a mathias base for high sierra 10.13.
+* [2020/08/26] Reworked using dotbot
 
-## Installation (from a new machine)
+## OSX Installation (from a new machine)
 
-The `bootstrap.sh` should be sufficient to get Command Line tools, git and homebrew installed on a vanilla machine.
+1. Bootstrap
+* caffinate
+* promptless homebrew
+* git install
+* workspace, git clone
+* kill caffinate
 
-1. `mkdir -p ~/workspace && cd ~/workspace && curl --remote-name https://raw.githubusercontent.com/yuhunglin/dotfiles/sierra/bootstrap.sh && chmod +x bootstrap.sh && ./bootstrap.sh`
+```
+   (caffeinate &) \
+   && echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
+   && brew install git \
+   && mkdir -p ~/workspace \
+   && ssh-keyscan github.com >> ~/.ssh/known_hosts \
+   && git clone https://github.com/yuhunglin/dotfiles.git ~/workspace/dotfiles\
+   && cd ~/workspace/dotfiles \
+   && git remote set-url origin git@github.com:yuhunglin/dotfiles.git \
+   && killall caffeinate
+```
+
+1. While homebrew is bootstrapping:
+* set machine name
+* ssh-keygen
+* add new ssh-key to github
+
+
+1. run dotbot stuff
+```
+caffeinate -i ./install-profile osx_highsierra
+```
+
+---
+
 
 While the top level script is running
 ```
 sudo scutil --set HostName <new name>
 sudo scutil --set ComputerName <new name>
 sudo scutil --set LocalHostName <new name>
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $1
 ssh-keygen -t rsa -b 4096
 # Copy to github for the new machine
 cat ~/.ssh/id_rsa.pub
-mkdir ~/workspace/ && cd ~/workspace/
-git clone git@github.com:yuhunglin/dotfiles.git
-cd ~/workspace/dotfiles
+
+#mkdir ~/workspace/ && cd ~/workspace/
+#git clone git@github.com:yuhunglin/dotfiles.git
+#cd ~/workspace/dotfiles
 #git submodule init
 #git submodule update
 ```
@@ -64,8 +96,3 @@ export PATH="/usr/local/bin:$PATH"
 ### Extras
 
 - `.extras.sample` is copied over to $HOME and an easy way to slot in things that cannot be committed easily.
-
-### TODO:
-* bin/confd
-* bin/levant
-* bin/vault-unsealer

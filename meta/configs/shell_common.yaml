@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+- link:
+    ~/.path: shells/path
+    ~/.exports: shells/exports
+    ~/.aliases: shells/aliases
+    ~/.hushlogin: shells/hushlogin
+    ~/.inputrc: shells/inputrc

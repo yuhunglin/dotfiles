@@ -37,6 +37,11 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+[branch]
+
+	# Show most recently changed branches first.
+	sort = -committerdate
+
 [core]
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
@@ -53,7 +58,21 @@
 
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
-	untrackedCache = true
+  untrackedCache = true
+
+  excludesfile = ~/.gitignore_global
+	editor = /usr/local/bin/nvim
+
+[color]
+
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+
+	current = green bold
+	remote = dim
 
 [commit]
 
@@ -90,3 +109,11 @@
 
 [credential]
 	helper = osxkeychain
+
+[user]
+	name = Yu-Hung Lin
+	email = 1497839+yuhunglin@users.noreply.github.com
+	signingkey = 7F416953E5834F2F0E5833DAB5DB8B54A93707C9
+
+[init]
+	defaultBranch = main

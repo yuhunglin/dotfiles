@@ -1,3 +1,17 @@
 workspace
 #homebrew
-homebrew_highsierra
+#homebrew_highsierra
+git
+ruby
+python
+node_osx
+dev
+nvim
+shell_common
+#shell_bash
+
+# apps
+#spectacle
+#tmux.osx?
+
+#osx_defaults

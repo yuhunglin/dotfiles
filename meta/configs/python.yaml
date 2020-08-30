@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+- shell:
+  - [pyenv install -s $(pyenv install -l | grep -v - | grep -v b | tail -1), Install latest stable python]
+  - [pyenv global $(pyenv install -l | grep -v - | grep -v b | tail -1), Set global (default) python version]
+  - [cd ~/workspace/dotfiles/development/python && pip install --upgrade pip, pip upgrade]
+  - [pyenv rehash, Update shim executables]

@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+- link:
+    ~/.config/nvim/init.vim: editors/nvim/init.vim
+    ~/.vim: .vim
+    ~/.vimrc: editors/nvim/vimrc
+    ~/.gvimrc: editors/nvim/gvimrc
+- shell:
+  - [nvim -c 'PlugClean!' -c 'PlugInstall' -c 'PlugUpdate' -c 'q' -c 'q', Install vim plugins]

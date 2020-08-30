@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+- shell:
+  - [rbenv install -s $(rbenv install -l | grep -v - | tail -1), Install latest stable ruby]
+  - [rbenv global $(rbenv install -l | grep -v - | tail -1), Set global (default) ruby version]
+  - [cd ~/workspace/dotfiles/development/ruby && bundle install --system, Bundle install]
+  - [rbenv rehash, Update shim executables]
+- link:
+    ~/.bundle/config:
+      #high sierra
+      path: development/ruby/bundle_config_highsierra
+      if: 'vert ">10.13,<10.14" $(sw_vers -productVersion)'
+#- link:
+    #~/.bundle/config:
+      #path: development/ruby/bundle_config_highsierra
+      #if: 'vert ">10.14,<10.15" $(sw_vers -productVersion)'

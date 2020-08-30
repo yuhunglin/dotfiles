@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+    shell:
+      stdout: true
+      stderr: true
+- create:
+    - ~/.nvim
+- shell:
+  - [. $(brew --prefix nvm)/nvm.sh && nvm install --lts --latest-npm, Install latest LTS node, npm]
+  - [. $(brew --prefix nvm)/nvm.sh && nvm use --lts && npm install --save-dev -g eslint, Install eslint]

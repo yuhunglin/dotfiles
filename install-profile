@@ -18,6 +18,7 @@ cd "${BASE_DIR}"
 git submodule update --init --recursive
 
 while IFS= read -r config; do
+  if [[ $config =~ ^# ]]; then continue; fi
 	CONFIGS+=" ${config}"
 done < "${META_DIR}/${PROFILES_DIR}/$1"
 
