@@ -11,3 +11,6 @@
 	path = meta/dotbot-brewfile
 	url = https://github.com/sobolevn/dotbot-brewfile.git
 	ignore = dirty
+[submodule "shells/bash/bash_it"]
+	path = shells/bash/bash_it
+	url = https://github.com/Bash-it/bash-it.git

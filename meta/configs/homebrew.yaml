@@ -15,5 +15,4 @@
 - shell:
   - [brew cleanup, Brew cleanup]
   - [pip3 install --user pynvim flake8, pip3 vim libraries]
-  - [pip install --user pynvim flake8, pip vim libraries]
   - [sudo gem install neovim, Installing Ruby NeoVim Gem]

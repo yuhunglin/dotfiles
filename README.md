@@ -18,7 +18,7 @@
    && brew install git \
    && mkdir -p ~/workspace \
    && ssh-keyscan github.com >> ~/.ssh/known_hosts \
-   && git clone https://github.com/yuhunglin/dotfiles.git ~/workspace/dotfiles\
+   && git clone --recursive https://github.com/yuhunglin/dotfiles.git ~/workspace/dotfiles\
    && cd ~/workspace/dotfiles \
    && git remote set-url origin git@github.com:yuhunglin/dotfiles.git \
    && killall caffeinate

@@ -3,10 +3,10 @@ tap "universal-ctags/universal-ctags"
 
 brew "coreutils"
 brew "findutils"
-brew "gnu-sed", args: ["with-default-names"]
-brew "wget", args: ["with-iri"]
+brew "gnu-sed"
+brew "wget"
 brew "gnupg", link: true
-brew "vim", args: ["--with-override-system-vi"]
+brew "vim"
 
 brew 'ag'
 brew 'awscli'
@@ -30,7 +30,7 @@ brew 'screen'
 brew 'ssh-copy-id'
 brew 'telnet'
 brew 'tfenv'
-brew 'universal-ctags'
+brew 'universal-ctags', args: ["HEAD"]
 brew 'vert'
 
 #cask 'android-file-transfer'
