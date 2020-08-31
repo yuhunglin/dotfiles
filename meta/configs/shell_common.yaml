@@ -12,3 +12,12 @@
     ~/.aliases: shells/aliases
     ~/.hushlogin: shells/hushlogin
     ~/.inputrc: shells/inputrc
+    ~/.profile: shells/profile_common
+    ~/.bashrc:
+      path: shells/bash/bashrc
+      if: >-
+        [[ $(ps -p $$ | tail -1 | awk '{ print $4 }') =~ "bash" ]]
+    ~/.zshrc:
+      path: shells/zsh/zshrc
+      if: >-
+        [[ $(ps -p $$ | tail -1 | awk '{ print $4 }') =~ "zsh" ]]
