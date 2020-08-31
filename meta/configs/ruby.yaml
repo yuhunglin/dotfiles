@@ -9,7 +9,12 @@
 - shell:
   - [rbenv install -s $(rbenv install -l | grep -v - | tail -1), Install latest stable ruby]
   - [rbenv global $(rbenv install -l | grep -v - | tail -1), Set global (default) ruby version]
-  - [cd ~/workspace/dotfiles/development/ruby && bundle install --system, Bundle install]
+  -
+    command: >-
+      eval "$(rbenv init -)" &&
+      gem install bundler &&
+      gem install --file ~/workspace/dotfiles/development/ruby/Gemfile --no-lock
+    description: Bundle install
   - [rbenv rehash, Update shim executables]
 - link:
     ~/.bundle/config:

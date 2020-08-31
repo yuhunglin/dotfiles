@@ -17,5 +17,6 @@ wget
 screen
 #spectacle
 #tmux.osx?
+#tfenv
 
 #osx_defaults
