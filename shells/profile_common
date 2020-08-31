@@ -11,14 +11,11 @@ unset file;
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which fnm > /dev/null; then eval "$(fnm env --multi --use-on-cd)"; fi
 
 #Enable C-S forward history search
 stty -ixon
 
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-if [[ -f ~/.profile_shell ] && [ -r ~/.profile_shell ]]; then
+if [ -f ~/.profile_shell ] && [ -r ~/.profile_shell ]; then
   source ~/.profile_shell
 fi;
