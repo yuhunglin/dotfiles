@@ -16,6 +16,4 @@ if which fnm > /dev/null; then eval "$(fnm env --multi --use-on-cd)"; fi
 #Enable C-S forward history search
 stty -ixon
 
-if [ -f ~/.profile_shell ] && [ -r ~/.profile_shell ]; then
-  source ~/.profile_shell
-fi;
+[ -r ~/.profile_shell ] && [ -f ~/.profile_shell ] && source ~/.profile_shell
