@@ -11,6 +11,7 @@ brew "neovim"
 
 brew 'ag'
 brew 'awscli'
+brew 'dive'
 brew 'Schniz/tap/fnm'
 brew 'grep'
 brew 'hub'
