@@ -12,4 +12,4 @@
     ~/.vimrc: editors/nvim/vimrc
     ~/.gvimrc: editors/nvim/gvimrc
 - shell:
-  - [nvim -c 'PlugClean!' -c 'PlugInstall' -c 'PlugUpdate' -c 'q' -c 'q', Install vim plugins]
+  - [nvim -c 'PlugClean!' -c 'PlugInstall' -c 'PlugUpdate' -c 'UpdateRemotePlugins' -c 'q' -c 'q', Install vim plugins]
