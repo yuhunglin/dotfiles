@@ -1,0 +1,5 @@
+- shell:
+  -
+    command: ~/workspace/dotfiles/macos/catalina
+    description: Setting Catalina defaults
+    stdin: true

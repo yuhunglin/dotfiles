@@ -18,4 +18,4 @@ spectacle
 #tmux.osx?
 #tfenv
 
-#osx_defaults
+osx_catalina
