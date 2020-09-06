@@ -20,7 +20,7 @@
     "shortcut_name" : "MoveToBottomHalf"
   },
   {
-    "shortcut_key_binding" : "ctrl+alt+cmd+space",
+    "shortcut_key_binding" : "ctrl+alt+cmd+n",
     "shortcut_name" : "MoveToNextDisplay"
   },
   {
