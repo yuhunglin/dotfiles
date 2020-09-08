@@ -42,6 +42,7 @@ Plug 'szw/vim-maximizer'
 Plug 'godlygeek/tabular'
 Plug 'greyblake/vim-preview'
 Plug 'rhysd/devdocs.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " Testing
 Plug 'janko-m/vim-test'

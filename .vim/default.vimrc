@@ -256,3 +256,7 @@ let g:devdocs_filetype_map = {
 " indentline
 map <silent> <Leader>ig :IndentLinesToggle<CR>
 let g:indentLine_concealcursor=""
+
+" markdown-preview.nvim
+" https://github.com/iamcco/markdown-preview.nvim
+map <silent> <Leader>p <Plug>MarkdownPreviewToggle<CR>
