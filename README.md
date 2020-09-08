@@ -55,6 +55,7 @@ curl -L https://github.com/jetstack/vault-unsealer/releases/latest/download/vaul
 1. Add Google Keep manually to the dock
 
 1. Open the following programs to finish installation
+  - Docker
   - Flycut
   - Keybase
   - Spectacle

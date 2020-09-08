@@ -54,6 +54,7 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile'] }
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
+Plug 'darfink/vim-plist'
 
 source ~/.vim/plugs-javascript.vimrc
 source ~/.vim/plugs-ruby.vimrc
