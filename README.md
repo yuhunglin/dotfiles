@@ -14,6 +14,7 @@
 
 ```
    (caffeinate &) \
+   && chsh -s /bin/bash
    && echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
    && brew install git \
    && mkdir -p ~/workspace \
@@ -24,11 +25,16 @@
    && killall caffeinate
 ```
 
-1. While homebrew is bootstrapping:
+1. Set machine name and stuff:
 * set machine name
 * ssh-keygen
 * add new ssh-key to github
-
+```
+~/workspace/dotfiles/scripts/osx_set_machine_name flexo
+ssh-keygen -t rsa -b 4096
+# Copy to github for the new machine
+cat ~/.ssh/id_rsa.pub
+```
 
 1. run dotbot stuff
 ```
@@ -37,44 +43,23 @@ caffeinate -i ./install-profile osx_highsierra
 
 ---
 
+`dotfiles/bin` stuff to automate
 
-While the top level script is running
+github releases (for now)
 ```
-sudo scutil --set HostName <new name>
-sudo scutil --set ComputerName <new name>
-sudo scutil --set LocalHostName <new name>
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $1
-ssh-keygen -t rsa -b 4096
-# Copy to github for the new machine
-cat ~/.ssh/id_rsa.pub
+curl -L https://github.com/hashicorp/levant/releases/latest/download/darwin-amd64-levant -o ~/workspace/dotfiles/bin/levant && chmod +x ~/workspace/dotfiles/bin/levant
 
-#mkdir ~/workspace/ && cd ~/workspace/
-#git clone git@github.com:yuhunglin/dotfiles.git
-#cd ~/workspace/dotfiles
-#git submodule init
-#git submodule update
+curl -L https://github.com/jetstack/vault-unsealer/releases/latest/download/vault-unsealer_0.3.1_darwin_amd64 -o ~/workspace/dotfiles/bin/vault-unsealer && chmod +x ~/workspace/dotfiles/bin/vault-unsealer
 ```
 
-1. To run the rest of the install: `cd ~/workspace/dotfiles && ./run.sh`
+1. Add Google Keep manually to the dock
 
-
-- Dock icon suggestions
-  - Finder
-  - Iterm
-  - Google Keep
-  - Chrome
-  - Slack
-  - ITunes
-  - Activity Monitor
-  - Preferences
-
-- Open the following programs to finish installation
-  - Viscosity
-  - Dropbox
+1. Open the following programs to finish installation
   - Flycut
+  - Keybase
   - Spectacle
-  - Jing
   - VLC
+  - Viscosity
 
 - Maybe install the printer?
 

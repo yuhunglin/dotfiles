@@ -3,9 +3,6 @@
       create: true
       relink: true
       force: true
-    shell:
-      stdout: true
-      stderr: true
 - link:
     ~/.bash_it:
       path: shells/bash/bash_it
@@ -14,5 +11,5 @@
       if: >-
         [[ $(ps -p $$ | tail -1 | awk '{ print $4 }') =~ "bash" ]]
 - shell:
-  - [source $BASH_IT/bash_it.sh && bash-it enable completion ssh git gh, Bash-it enable completion ssh git gh]
-  - [source $BASH_IT/bash_it.sh && bash-it enable plugin base rbenv pyenv, Bash-it enable plugin base rbenv pyenv]
+  - [source ~/.profile_shell && source $BASH_IT/bash_it.sh && bash-it enable completion ssh git gh, Bash-it enable completion ssh git gh]
+  - [source ~/.profile_shell && source $BASH_IT/bash_it.sh && bash-it enable plugin base rbenv pyenv, Bash-it enable plugin base rbenv pyenv]

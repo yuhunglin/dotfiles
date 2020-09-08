@@ -4,9 +4,9 @@
       relink: true
       force: true
 - link:
-    ~/.Brewfile_highsierra: macos/Brewfile_highsierra
+    ~/.Brewfile_bash: macos/Brewfile_bash
 - brewfile:
-    file: macos/Brewfile_highsierra
+    file: macos/Brewfile_bash
     stdout: true
     stderr: true
 - shell:

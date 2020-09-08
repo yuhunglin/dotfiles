@@ -1,14 +1,15 @@
 workspace
-#homebrew
-#shell_common
+homebrew
+homebrew_bash
+shell_common
 
-#git
-#ruby
-#python
-#node_osx
-#dev
-#nvim
-#shell_bash
+git
+ruby
+python
+node_osx
+dev
+nvim
+shell_bash
 
 # apps
 curl
@@ -19,3 +20,5 @@ spectacle
 #tfenv
 
 osx_catalina
+osx_set_application_defaults
+osx_set_dock

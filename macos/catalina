@@ -29,6 +29,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+## Menu bar clock format
+defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  h:mm:ss a"
+
+# Add bluetooth icon to menu bar
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+  "/System/Library/CoreServices/Menu Extras/Displays.menu" \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -941,7 +953,7 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 bin/addLoginItem /Applications/Flycut.app
 bin/addLoginItem /Applications/Caffeine.app
 bin/addLoginItem /Applications/Spectacle.app
-bin/addLoginItem /Applications/Dropbox.app
+#bin/addLoginItem /Applications/Dropbox.app
 bin/addLoginItem /Applications/Keybase.app
 
 for app in "Activity Monitor" \
@@ -961,7 +973,6 @@ for app in "Activity Monitor" \
 	"SizeUp" \
 	"Spectacle" \
 	"SystemUIServer" \
-	"Terminal" \
 	"Transmission" \
 	"Tweetbot" \
 	"Twitter" \

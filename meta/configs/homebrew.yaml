@@ -3,11 +3,10 @@
       create: true
       relink: true
       force: true
-    command:
-      stdout: true
-      stderr: true
 - link:
     ~/.Brewfile: macos/Brewfile
+- shell:
+  - [defaults write com.apple.LaunchServices LSQuarantine -bool false, disable open app prompt]
 - brewfile:
     file: macos/Brewfile
     stdout: true

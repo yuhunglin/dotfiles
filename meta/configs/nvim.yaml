@@ -3,9 +3,6 @@
       create: true
       relink: true
       force: true
-    shell:
-      stdout: true
-      stderr: true
 - link:
     ~/.config/nvim/init.vim: editors/nvim/init.vim
     ~/.vim: .vim

@@ -1,0 +1,4 @@
+- shell:
+  -
+    command: ~/workspace/dotfiles/scripts/osx_set_application_defaults.sh
+    description: Setting Application Launch defaults

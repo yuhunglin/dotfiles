@@ -1,0 +1,4 @@
+- shell:
+  -
+    command: ~/workspace/dotfiles/scripts/osx_set_dock.sh
+    description: Setting Dock items
