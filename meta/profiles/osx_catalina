@@ -12,6 +12,7 @@ nvim
 shell_bash
 
 # apps
+iterm2
 curl
 wget
 screen

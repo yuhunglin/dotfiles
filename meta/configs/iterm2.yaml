@@ -1,0 +1,9 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- link:
+    ~/Library/Application Support/iterm2/DynamicProfiles/Profiles.json: apps/iterm2/Profiles.json
+- shell:
+  - [defaults write com.googlecode.iterm2 "Default Bookmark Guid" "695301A9-3204-4C99-8F3C-B75CD287FE6E", Set default profile]
