@@ -1,5 +1,6 @@
 tap "homebrew/cask-drivers"
 tap "universal-ctags/universal-ctags"
+tap "cantino/mcfly", "https://github.com/cantino/mcfly"
 
 brew "coreutils"
 brew "findutils"
@@ -20,7 +21,8 @@ brew 'hub'
 brew 'imagemagick'
 brew 'jq'
 brew 'libpq', link: true
-brew 'md5sha1sum'
+brew "mcfly"
+brew "md5sha1sum"
 #brew 'nvm'
 brew 'openssh'
 brew 'packer'
