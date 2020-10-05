@@ -44,6 +44,7 @@
 1. keybase gpg stuff:
     * https://gist.github.com/webframp/75c680930b6b2caba9a1be6ec23477c1
     * https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine
+    * `sudo xattr -rd com.apple.quarantine /Library/Filesystems/kbfuse.fs/` to deal with the kbfuse.fs signature issues.
 
 
 * Other useful commands:

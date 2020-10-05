@@ -13,6 +13,7 @@ brew "neovim"
 brew 'ag'
 brew 'awscli'
 brew 'confd'
+brew 'dockutil'
 brew 'dive'
 brew 'duti'
 brew 'Schniz/tap/fnm'

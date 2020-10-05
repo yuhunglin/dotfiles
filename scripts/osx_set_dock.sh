@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 # Remove apps I don't use from the dock.
 for shortcut_label in "Launchpad" "Contacts" "Mail" \
     "Siri" "Maps" "FaceTime" "iTunes" "iBooks" "Reminders" \
