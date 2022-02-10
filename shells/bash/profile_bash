@@ -25,7 +25,7 @@ fi;
 # Enable mcfly (if available)
 if [[ -r "/usr/local/opt/mcfly/mcfly.bash" ]]; then
   source "$(brew --prefix)/opt/mcfly/mcfly.bash"
-  export MCFLY_KEY_SCHEME=vim
+  #export MCFLY_KEY_SCHEME=vim
 fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards

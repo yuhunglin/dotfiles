@@ -14,7 +14,7 @@
     * kill caffinate
     ```
    (caffeinate &) \
-   && chsh -s /bin/bash
+   && sudo chsh -s /bin/bash \
    && echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
    && brew install git \
    && mkdir -p ~/workspace \
@@ -30,10 +30,15 @@
     * ssh-keygen
     * add new ssh-key to github
     ```
-    ~/workspace/dotfiles/scripts/osx_set_machine_name flexo
+    ~/workspace/dotfiles/scripts/osx_set_machine_name.sh flexo
     ssh-keygen -t rsa -b 4096
     # Copy to github for the new machine
     cat ~/.ssh/id_rsa.pub
+    ```
+
+1. update submodules
+    ```
+    git submodule update --remote
     ```
 
 1. run dotbot stuff

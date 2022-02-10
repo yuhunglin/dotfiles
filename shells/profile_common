@@ -16,4 +16,7 @@ if which fnm > /dev/null; then eval "$(fnm env --multi --use-on-cd)"; fi
 #Enable C-S forward history search
 stty -ixon
 
+#enable direnv
+eval "$(direnv hook bash)"
+
 [ -r ~/.profile_shell ] && [ -f ~/.profile_shell ] && source ~/.profile_shell

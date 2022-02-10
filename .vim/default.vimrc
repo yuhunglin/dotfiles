@@ -217,7 +217,7 @@ function Search(string) abort
   endtry
 endfunction
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case --hidden --ignore .git'
+  let g:ackprg = 'ag --vimgrep --smart-case --hidden --ignore .git --ignore .terraform'
 endif
 "cnoreabbrev Ack Ack!
 nnoremap <leader>ag :Ack!<space>
