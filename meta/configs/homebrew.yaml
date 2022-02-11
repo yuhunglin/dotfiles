@@ -13,3 +13,6 @@
     stderr: true
 - shell:
   - [brew cleanup, Brew cleanup]
+- shell:
+  - |
+    echo -e "\\033[1;33msad, install manually sshfs and osxfuse: https://osxfuse.github.io/"

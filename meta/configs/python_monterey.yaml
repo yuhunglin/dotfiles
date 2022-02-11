@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- shell:
+  - [pyenv install -s $(pyenv install -l | grep -v - | grep -v b | tail -1), Install latest stable python]
+    # FIXME: deal with pynvim bug
+  - [pyenv install -s $(pyenv install -l | grep -v - | grep -v b | grep 3.10. | tail -1), Install latest stable python 3.10.x]
+  - [pyenv global $(pyenv install -l | grep -v - | grep -v b | grep 3.10. | tail -1), Set global (default) python version]
+  - [eval "$(pyenv init -)" && pip3 install --upgrade pip, pip3 upgrade]
+  - [eval "$(pyenv init -)" && pip3 install --user pynvim flake8, pynvim flake8]
+  - [pyenv rehash, Update shim executables]

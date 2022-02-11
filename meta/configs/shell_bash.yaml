@@ -11,5 +11,7 @@
       if: >-
         [[ $(ps -p $$ | tail -1 | awk '{ print $4 }') =~ "bash" ]]
 - shell:
-  - [source ~/.profile_shell && source $BASH_IT/bash_it.sh && bash-it enable completion ssh git gh, Bash-it enable completion ssh git gh]
-  - [source ~/.profile_shell && source $BASH_IT/bash_it.sh && bash-it enable plugin base rbenv pyenv, Bash-it enable plugin base rbenv pyenv]
+  -
+    command: bash -c "~/workspace/dotfiles/scripts/osx_set_bash_it_preferences.sh"
+    description: Setting Bash-it defaults
+    stdout: true

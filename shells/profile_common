@@ -11,7 +11,7 @@ unset file;
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which fnm > /dev/null; then eval "$(fnm env --multi --use-on-cd)"; fi
+if which fnm > /dev/null; then eval "$(fnm env --use-on-cd)"; fi
 
 #Enable C-S forward history search
 stty -ixon

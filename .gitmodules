@@ -10,4 +10,4 @@
 	path = shells/bash/bash_it
 	url = https://github.com/Bash-it/bash-it.git
   shallow = true
-	ignore = dirty
+  ignore = dirty

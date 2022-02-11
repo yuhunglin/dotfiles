@@ -1,0 +1,25 @@
+workspace
+homebrew
+homebrew_bash
+shell_common
+
+git
+ruby
+python_monterey
+node_osx
+dev
+nvim
+shell_bash
+
+# apps
+iterm2
+curl
+wget
+screen
+spectacle
+#tmux.osx?
+#tfenv
+
+osx_catalina
+osx_set_application_defaults
+osx_set_dock

@@ -6,6 +6,14 @@
 
 ## OSX Installation (from a new machine)
 
+1. _(optional)_ Extend sudo `timestamp_timeout` while machine is getting setup
+    ```
+    sudo visudo
+
+    # Add this to the bottom to extend the timeout to 4 hours
+    Defaults timestamp_timeout=240
+    ```
+
 1. Bootstrap
     * caffinate
     * promptless homebrew
@@ -14,7 +22,8 @@
     * kill caffinate
     ```
    (caffeinate &) \
-   && sudo chsh -s /bin/bash \
+   && sudo chsh -s /usr/local/bin/bash \
+   && sudo chsh -s /usr/local/bin/bash $(whoami) \
    && echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
    && brew install git \
    && mkdir -p ~/workspace \
@@ -36,11 +45,6 @@
     cat ~/.ssh/id_rsa.pub
     ```
 
-1. update submodules
-    ```
-    git submodule update --remote
-    ```
-
 1. run dotbot stuff
     ```
     caffeinate -i ./install-profile osx_catalina
@@ -58,6 +62,8 @@
       * https://gist.github.com/webframp/75c680930b6b2caba9a1be6ec23477c1
       * https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine
 
+
+1. _(optional)_ Remove the sudoers `timestamp_timeout` after machine is setup.
 
 * Other useful commands:
     * Standalone config runs:

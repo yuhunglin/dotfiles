@@ -4,5 +4,5 @@
       relink: true
       force: true
 - shell:
-  - [eval "$(fnm env --multi --use-on-cd)" && fnm install latest-v12.x && fnm default latest-v12.x, Install and defualt latest 12.x node]
-  - [eval "$(fnm env --multi --use-on-cd)" && npm install --save-dev -g eslint && npm install -g npm@latest neovim yarn, Install npm eslint neovim yarn]
+  - [eval "$(fnm env --use-on-cd)" && fnm install --lts, Install and default latest lts node]
+  - [eval "$(fnm env --use-on-cd)" && npm install --save-dev -g eslint && npm install -g npm@latest neovim yarn, Install npm eslint neovim yarn]
