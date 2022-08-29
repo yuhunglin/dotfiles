@@ -260,3 +260,11 @@ let g:indentLine_concealcursor=""
 " markdown-preview.nvim
 " https://github.com/iamcco/markdown-preview.nvim
 map <silent> <Leader>p <Plug>MarkdownPreviewToggle<CR>
+
+" Python version detection
+let g:python_version = matchstr(system("python --version | cut -f2 -d' '"), '^[0-9]')
+if g:python_version =~ 3
+    let g:python2_host_prog = "/usr/local/bin/python2"
+else
+    let g:python3_host_prog = "/usr/local/bin/python3"
+endif

@@ -22,8 +22,6 @@
     * kill caffinate
     ```
    (caffeinate &) \
-   && sudo chsh -s /usr/local/bin/bash \
-   && sudo chsh -s /usr/local/bin/bash $(whoami) \
    && echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
    && brew install git \
    && mkdir -p ~/workspace \
@@ -38,16 +36,20 @@
     * set machine name
     * ssh-keygen
     * add new ssh-key to github
+    * set shell to bash
     ```
     ~/workspace/dotfiles/scripts/osx_set_machine_name.sh flexo
     ssh-keygen -t rsa -b 4096
     # Copy to github for the new machine
     cat ~/.ssh/id_rsa.pub
+    sudo chsh -s /usr/local/bin/bash \
+    && sudo chsh -s /usr/local/bin/bash $(whoami)
+
     ```
 
 1. run dotbot stuff
     ```
-    caffeinate -i ./install-profile osx_catalina
+    caffeinate -i ./install-profile osx_monterey
     ```
 1. Deal with keybase finder issues:
     * `sudo xattr -rd com.apple.quarantine /Library/Filesystems/kbfuse.fs/` to deal with the kbfuse.fs signature issues.
@@ -82,7 +84,7 @@
     curl -L https://github.com/jetstack/vault-unsealer/releases/latest/download/vault-unsealer_0.3.1_darwin_amd64 -o ~/workspace/dotfiles/bin/vault-unsealer && chmod +x ~/workspace/dotfiles/bin/vault-unsealer
     ```
 
-1. Add Google Keep manually to the dock
+1. [Add Google Keep manually to the dock](https://chrome.google.com/webstore/detail/google-keep-notes-and-lis/hmjkmjkepdijhoojdojkdfohbdgmmhki)
 
 1. Open the following programs to finish installation
     * Docker
