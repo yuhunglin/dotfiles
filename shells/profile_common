@@ -1,5 +1,11 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/bin:/opt/homebrew/opt/curl/bin:/usr/local/bin:$PATH";
+
+# Enable Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Adding  gcloud components to your PATH
+# source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.

@@ -61,7 +61,8 @@
   untrackedCache = true
 
   excludesfile = ~/.gitignore_global
-	editor = /usr/local/bin/nvim
+  # unnecessary, defaults to EDITOR
+  # editor = /opt/homebrew/bin/nvim
 
 [color]
 

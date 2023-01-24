@@ -1,0 +1,7 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+- link:
+    ~/Library/Application Support/Rectangle/RectangleConfig.json: apps/rectangle/rectangle.json

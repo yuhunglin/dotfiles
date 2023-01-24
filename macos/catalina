@@ -877,7 +877,8 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 # Set up my preferred keyboard shortcuts
-cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+# Unnecessary from dotbot scripts
+#cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #
@@ -962,7 +963,8 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 bin/addLoginItem /Applications/Flycut.app
 bin/addLoginItem /Applications/Caffeine.app
-bin/addLoginItem /Applications/Spectacle.app
+if [[ -d "/Applications/Spectacle.app/" ]]; then bin/addLoginItem /Applications/Spectacle.app; fi
+if [[ -d "/Applications/Rectangle.app/" ]]; then bin/addLoginItem /Applications/Rectangle.app; fi
 bin/addLoginItem /Applications/Keybase.app
 
 for app in "Activity Monitor" \
@@ -977,6 +979,7 @@ for app in "Activity Monitor" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
+  "Rectangle" \
 	"Safari" \
 	"Spectacle" \
 	"SystemUIServer" \

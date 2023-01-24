@@ -13,10 +13,10 @@ shell_bash
 
 # apps
 iterm2
-curl
+#curl
 wget
 screen
-spectacle
+rectangle
 #tmux.osx?
 #tfenv
 

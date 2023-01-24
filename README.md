@@ -90,7 +90,8 @@
     * Docker
     * Flycut
     * Keybase
-    * Spectacle
+    * MeetingBar
+    * Spectacle/Rectangle
     * VLC
     * Viscosity
 
